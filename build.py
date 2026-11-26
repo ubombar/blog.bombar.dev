@@ -54,8 +54,6 @@ items = "\n".join(
     f'<a href="/posts/{slug}.html">{html.escape(t)}</a>'
     f'<span class="meta views" data-path="/posts/{slug}.html"></span></li>'
     for d, t, slug in sorted(posts, reverse=True))
-index = ('<p class="intro">Notes from a PhD candidate in Internet measurements at LIP6, '
-         'Sorbonne University. Packets, paths, and the software that chases them.</p>'
-         f'<ul class="posts">\n{items}\n</ul>')
+index = f'<ul class="posts">\n{items}\n</ul>'
 (OUT / "index.html").write_text(page("Ufuk Bombar — blog", index))
 print(f"built {len(posts)} post(s) into {OUT}")
